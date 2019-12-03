@@ -6,9 +6,11 @@ This is a implementation of a proxy for the `francesinhas.com` website.
 
 ### Required environment variables
 ```
+ALLOWED_HOSTS: A CSV list with the allowed domains/IPs (e.g. 122.122.333.12)
+DEBUG: true
 FRANCESINHAS_URL: http://francesinhas.com
 FRANCESINHAS_PLACES_API: /api/v1/places
-ALLOWED_HOSTS: A CSV list with the allowed domains/IPs (e.g. 122.122.333.12)
+LOG_LEVEL: INFO
 ```
 
 ## APIs
