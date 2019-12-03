@@ -1,0 +1,7 @@
+venv/
+venv-*/
+*.pyc
+.idea
+static/admin
+.DS_Store
+db.sqlite3
