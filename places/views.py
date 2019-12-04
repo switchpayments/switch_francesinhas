@@ -2,11 +2,15 @@
 from __future__ import unicode_literals
 
 import json
+import logging
 
 import requests
 from django.conf import settings
 from django.http import JsonResponse, HttpResponseBadRequest
 
+
+# This retrieves a Python logging instance (or creates it)
+logger = logging.getLogger(__name__)
 
 #
 # Places views
@@ -35,6 +39,7 @@ def get_places(request):
 
     # 3.1) Handle success request
     if response.status_code == 200:
+        logger.debug('Success response!')
         return JsonResponse(json.loads(response.content))
 
     # 3.2) Handle bad request

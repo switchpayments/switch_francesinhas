@@ -14,6 +14,9 @@ RUN pip install -r requirements.txt
 # Application source code
 COPY . .
 
+# Volumes
+VOLUME ["/var/log/app"]
+
 # Expose ports
 EXPOSE 8000
 

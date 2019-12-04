@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+import logging
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -120,6 +120,40 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#
+# Logging
+# https://docs.djangoproject.com/en/1.9/topics/logging/
+#
+LOG_FOLDER = os.environ.get('LOG_FOLDER', os.path.join(os.getcwd(), 'logs/'))
+LOG_LEVEL = os.environ.get('LOG_LEVEL', 'DEBUG')
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'django': {
+            'level': LOG_LEVEL,
+            'class': 'logging.FileHandler',
+            'filename':  os.path.join(LOG_FOLDER, 'django.log'),
+        },
+        'places': {
+            'level': LOG_LEVEL,
+            'class': 'logging.FileHandler',
+            'filename':  os.path.join(LOG_FOLDER, 'places.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'level': LOG_LEVEL,
+            'handlers': ['django'],
+        },
+        'places': {
+            'handlers': ['places'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+    },
+}
 
 #
 # Francesinhas website configurations
