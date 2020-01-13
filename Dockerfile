@@ -2,7 +2,11 @@ FROM python:2.7-slim-buster
 
 RUN apt-get update -qq && apt-get install -qq \
   build-essential \
-  git
+  git \
+  dh-autoreconf \
+  libffi-dev \
+  libpq-dev \
+  libssl-dev
 
 # Set the working directory
 WORKDIR /app
