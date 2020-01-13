@@ -13,6 +13,15 @@ FRANCESINHAS_PLACES_API: /api/v1/places
 LOG_LEVEL: INFO
 ```
 
+### Optional environment variables
+```
+DATABASE_ENABLED: True to enable the PostgreSQL database engine
+DATABASE_USER: The user of the database
+DATABASE_PASSWORD: The password of the user
+DATABASE_HOST: The address of the database
+DATABASE_HOST: The port of the database
+```
+
 ## APIs
 
 ### Places
