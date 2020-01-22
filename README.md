@@ -11,6 +11,7 @@ DEBUG: true
 FRANCESINHAS_URL: http://francesinhas.com
 FRANCESINHAS_PLACES_API: /api/v1/places
 LOG_LEVEL: INFO
+LOG_FOLDER: /var/log/app
 ```
 
 ### Optional environment variables
