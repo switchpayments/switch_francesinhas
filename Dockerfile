@@ -5,8 +5,7 @@ RUN apt-get update -qq && apt-get install -qq \
   git \
   dh-autoreconf \
   libffi-dev \
-  libpq-dev \
-  libssl-dev
+  libpq-dev
 
 # Set the working directory
 WORKDIR /app
